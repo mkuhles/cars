@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function vehicle_checker_theme($existing, $type, $theme, $path) {
+  return [
+    'vehicle_checker_content' => [
+      'variables' => ['cars' => NULL],
+    ],
+    'vehicle_checker_detail' => [
+      'variables' => ['node' => NULL, 'release_year' => NULL],
+    ],
+  ];
+}

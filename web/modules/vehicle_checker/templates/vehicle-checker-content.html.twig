@@ -1,0 +1,13 @@
+<div>
+    {% for car in cars %}
+        <div class="cars-item" style="display: flex; gap:10px;">
+            <div>{{ car.title.value }}</div>
+            {% if car.hasField('field_release_date') and car.field_release_date.value %}
+                <div>Release Date: {{ car.field_release_date.value|date('d.m.Y') }}</div>
+            {% endif %}
+            {% if car.hasField('field_price') and car.field_price.value is not empty %}
+                <div>Price: {{ car.field_price.value|number_format(2, ',', '.') }} EUR</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

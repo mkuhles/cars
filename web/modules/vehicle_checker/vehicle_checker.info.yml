@@ -1,0 +1,5 @@
+name: 'vehicle Checker'
+type: module
+description: 'a simple test module'
+package: Custom
+core_version_requirement: ^10 || ^11
