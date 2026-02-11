@@ -37,27 +37,30 @@ class VehicleCheckerController extends ControllerBase {
   }
 
   public function detail(NodeInterface $node) {
+    // security check: node type "cars" only
     if ($node->bundle() !== 'cars') {
       throw new NotFoundHttpException();
     }
 
-    if (!$node->access('view')) {
-      throw new NotFoundHttpException();
+    // security check: release date 2020 not found
+    $release_date = $node->get('field_release_date')->value;
+    if ($release_date) {
+      $year = date('Y', strtotime($release_date));
+
+      // release date 2020: not found
+      if ($year === '2020') {
+        throw new NotFoundHttpException();
+      }
     }
-    $release_year = NULL;
-    if ($node->hasField('field_release_date') && !$node->get('field_release_date')->isEmpty()) {
-      $release_year = $node->get('field_release_date')->first()?->date?->format('Y');
-    }
-    if($release_year == 2020) {
-      throw new NotFoundHttpException($this->t('This vehicle was released in 2020!'));
-    }
-  
-    $build = [
+
+    return [
       '#theme' => 'vehicle_checker_detail',
       '#node' => $node,
-      '#release_year' => $release_year,
+      '#cache' => [
+        'contexts' => ['route'],
+        'tags' => $node->getCacheTags(),
+      ],
     ];
-    return $build;
   }
 
 }
