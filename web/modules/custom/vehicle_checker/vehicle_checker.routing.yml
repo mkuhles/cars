@@ -1,4 +1,4 @@
-verhicle_checker_list:
+verhicle_checke.list:
   path: '/vehicle-check' 
   defaults: 
     _controller: '\Drupal\vehicle_checker\Controller\VehicleCheckerController::content' 
@@ -6,7 +6,7 @@ verhicle_checker_list:
   requirements: 
     _permission: 'access content'
 
-verhicle_checker_detail:
+verhicle_checker.detail:
   path: '/vehicle-check/{node}'
   defaults: 
     _controller: '\Drupal\vehicle_checker\Controller\VehicleCheckerController::detail' 
