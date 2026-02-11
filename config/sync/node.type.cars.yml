@@ -1,0 +1,18 @@
+uuid: c1f8aa1e-65a8-4ed0-9620-1316e2567d3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Cars
+type: cars
+description: 'Used to create and display vehicles with pricing, release date, and brand information.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

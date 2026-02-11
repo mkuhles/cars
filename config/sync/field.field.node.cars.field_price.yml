@@ -1,0 +1,23 @@
+uuid: e17c8df6-3dbf-4e5d-a34e-1f9eadcac245
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.cars
+id: node.cars.field_price
+field_name: field_price
+entity_type: node
+bundle: cars
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

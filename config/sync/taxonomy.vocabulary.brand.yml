@@ -1,0 +1,9 @@
+uuid: 8119f3ba-5b54-4267-9055-0974da907b28
+langcode: en
+status: true
+dependencies: {  }
+name: Brand
+vid: brand
+description: 'car brand'
+weight: 0
+new_revision: false

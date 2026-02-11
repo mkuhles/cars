@@ -1,0 +1,40 @@
+uuid: 372bf60b-1b0f-4d51-8e57-2faa4c93a351
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cars.field_brand
+    - field.field.node.cars.field_image
+    - field.field.node.cars.field_price
+    - field.field.node.cars.field_release_date
+    - image.style.medium
+    - node.type.cars
+  module:
+    - image
+    - user
+id: node.cars.teaser
+targetEntityType: node
+bundle: cars
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_brand: true
+  field_price: true
+  field_release_date: true
